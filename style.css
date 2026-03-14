@@ -450,9 +450,10 @@ align-items:center;
   letter-spacing: 2px;
 }
 
-.about {
-  padding: 80px 20px;
-  background-color: #000;
+.about{
+padding:100px 0;
+background-color:#000;
+width:100%;
 }
 
 .about-container{
@@ -944,9 +945,10 @@ margin:auto;
 }
 
 .about{
-max-width:100%;
-width:100%;
-margin:0;
+width:100vw;
+margin-left:calc(-50vw + 50%);
+padding:100px 0;
+background:#000;
 }
 
 .service-section,
