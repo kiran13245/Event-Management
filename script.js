@@ -70,7 +70,7 @@ menuBtn.addEventListener("click", () => {
 });
 
 // close menu after click
-document.querySelectorAll("nav ul li a").forEach(link => {
+document.querySelectorAll("nav ul li a:not(.dropdown > a)").forEach(link => {
   link.addEventListener("click", () => {
     navMenu.classList.remove("active");
     menuBtn.innerHTML = "☰";
@@ -91,16 +91,15 @@ document.querySelectorAll('nav ul li a[href^="#"]').forEach(link => {
 // =========================
 // MOBILE DROPDOWN TOGGLE
 // =========================
-document.querySelectorAll(".dropdown > a").forEach(menu => {
-  menu.addEventListener("click", function(e){
-
-    if(window.innerWidth <= 900){
+document.querySelectorAll(".dropdown > a").forEach(item => {
+  item.addEventListener("click", function (e) {
+    if (window.innerWidth <= 900) {
       e.preventDefault();
       this.parentElement.classList.toggle("active");
     }
-
   });
 });
+
 
 // =========================
 // IMAGE LIGHTBOX POPUP WITH NAVIGATION
@@ -152,6 +151,7 @@ function nextImg() {
 lightbox.addEventListener("click", (e) => {
   if (e.target === lightbox) lightbox.classList.remove("show");
 });
+
 
 // =========================
 // STICKY NAVBAR - ACTIVE SECTION HIGHLIGHT
@@ -207,3 +207,4 @@ function slideReviewsFade() {
   reviews[reviewIndex].classList.add("show");
 }
 setInterval(slideReviewsFade, 3000);
+
